@@ -1,4 +1,0 @@
-Novo pedido
-Incluir jogo em pedido
-Detalhes da compra
-Fechar compra
