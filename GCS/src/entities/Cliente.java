@@ -91,7 +91,7 @@ public class Cliente implements Comparable<Cliente>, Serializable {
     }
 
     public Double totalEmCompras() {
-        return this.compras.stream().mapToDouble(Compra::getValorPago).sum();
+        return this.compras.stream().mapToDouble(Compra::valorAPagar).sum();
     }
 
 
