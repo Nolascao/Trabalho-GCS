@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 public class main {
 
-    static final String PATH_RESOURCES = "src/resources";
+    static final String PATH_RESOURCES = "GCS/src/resources";
     static final String arqClientes = PATH_RESOURCES + "/clientes.bin";
     static final String arqJogos = PATH_RESOURCES + "/jogos.bin";
     static final String arqCompras = PATH_RESOURCES + "/compras.bin";
