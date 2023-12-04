@@ -342,12 +342,11 @@ public class main {
         conjuntoClientes = carregarDados(arqClientes);
         limparTela();
         cabecalho();
-        System.out.println("Lista de clientes: \n");
+        System.out.println("Resumo Clientes: \n");
         conjuntoClientes.stream()
                 .collect(Collectors.groupingBy(Cliente::getNome, Collectors.counting()))
                 .entrySet()
                 .stream()
-                .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .limit(1)
                 .forEach(e -> System.out.println(e.getKey() + " - Nome: " + e.getValue()));
         return null;
