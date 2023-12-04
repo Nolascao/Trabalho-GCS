@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 public class main {
 
-    static final String PATH_RESOURCES = "src/resources";
+    static final String PATH_RESOURCES = "src/main/resources";
     static final String arqClientes = PATH_RESOURCES + "/clientes.bin";
     static final String arqJogos = PATH_RESOURCES + "/jogos.bin";
     static final String arqCompras = PATH_RESOURCES + "/compras.bin";
@@ -247,9 +247,22 @@ public class main {
                             .limit(10)
                             .forEach(e -> System.out.println(e.getKey() + " - " + e.getValue() + " vendas"));
                     break;
+                    case 15:
+                    case 27:
+                    case 35:
+                    case 45:
+                        limparTela();
+                        cabecalho();
+                        opcao = menu(0);
+                        opcao = 0;
+                    break;
             }
-            pausa(teclado);
-        } while (opcao != 0);
+            if (opcao != -1)
+                pausa(teclado);
+            else {
+                System.out.println("Desligando...");
+            }
+        } while (opcao != -1);
 
         gravarDados(conjuntoClientes, arqClientes);
         gravarDados(conjuntoJogos, arqJogos);
@@ -422,7 +435,7 @@ public class main {
         System.out.println("2 - Clientes");
         System.out.println("3 - Jogos");
         System.out.println("4 - Relatórios");
-        System.out.println("0 - Finalizar");
+        System.out.println("-1 - Finalizar");
         System.out.println("Digite sua opção: ");
         if ((subnivel % 10) == 0) {
             opcao = teclado.nextInt();
@@ -440,7 +453,7 @@ public class main {
                 case 4:
                     return subMenu(PATH_RESOURCES + "/menuConfigs/menuRelatorios.txt", 40);
                 default:
-                    return 0;
+                    return -1;
             }
         } catch (InputMismatchException ie) {
             return -1;
