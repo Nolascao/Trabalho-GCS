@@ -338,7 +338,7 @@ public class main {
 
     }
 
-    private static String resumoClientes() {
+    private static String resumoClientes() throws FileNotFoundException, ClassNotFoundException {
         conjuntoClientes = carregarDados(arqClientes);
         limparTela();
         cabecalho();
@@ -350,7 +350,6 @@ public class main {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .limit(1)
                 .forEach(e -> System.out.println(e.getKey() + " - Nome: " + e.getValue()));
-        break;
         return null;
     }
 
