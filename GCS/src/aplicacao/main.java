@@ -338,7 +338,7 @@ public class main {
 
     }
 
-    private static String resumoClientes() {
+    private static String resumoClientes() throws FileNotFoundException, ClassNotFoundException {
         conjuntoClientes = carregarDados(arqClientes);
         limparTela();
         cabecalho();
@@ -348,8 +348,7 @@ public class main {
                 .entrySet()
                 .stream()
                 .limit(1)
-                .forEach(e -> System.out.println("Id: " + e.getKey() + " - Nome: " + e.getValue()));
-        break;
+                .forEach(e -> System.out.println(e.getKey() + " - Nome: " + e.getValue()));
         return null;
     }
 
