@@ -20,4 +20,4 @@ jobs:
         java-version: '11'
 
     - name: Compile
-      run: javac -d target src/**/*.java
+      run: javac -d target GCS/src/**/*.java
