@@ -23,4 +23,5 @@ jobs:
      # run: javac -d target GCS/src/**/*.java
 
     - name: Compile and run tests
-      run: javac -cp ".:$GITHUB_WORKSPACE/GCS/junit-platform-console-standalone-1.8.0-M1.jar" -d target GCS/src/**/*.java && java -cp "target:$GITHUB_WORKSPACE/GCS/junit-platform-console-standalone-1.8.0-M1.jar" org.junit.runner.JUnitCore target:$GITHUB_WORKSPACE/GCS/src/tests/JogoTest.java 
+      run: javac -cp ".:$GITHUB_WORKSPACE/junit.jar" -d GCS/bin GCS/src/**/*.java && java -cp "GCS/bin:$GITHUB_WORKSPACE/junit.jar" tests.YourTestClassName
+
